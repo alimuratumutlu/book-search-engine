@@ -14,8 +14,11 @@ const useBookData = () => {
 
 	const fetchBooks = async (searchTerm: string) => {
 		try {
-			const response = await axios.get(`/api/books?searchTerm=${searchTerm}`);
+			const response = await axios.get(
+				`https://admin.muum.dev/book_search.php?searchTerm=${searchTerm}`
+			);
 			const books = response.data;
+			console.log(books);
 			return books;
 		} catch (error) {
 			console.error("Error fetching books:", error);
