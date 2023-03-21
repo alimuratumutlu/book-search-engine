@@ -12,17 +12,16 @@ export default function SearchInput({
 	searchTerm,
 	setSearchTerm,
 }: searchInputProps) {
-	const handleSearch = () => {
-		console.log("Search for books");
-		setSearchTerm(searchTerm);
+	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setSearchTerm(event.target.value);
 	};
 
 	return (
 		<Input
+			onChange={handleChange}
 			icon={<IconBook />}
 			placeholder="Search for books"
 			value={searchTerm}
-			onChange={handleSearch}
 		/>
 	);
 }
