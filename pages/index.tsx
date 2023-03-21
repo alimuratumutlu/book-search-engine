@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Center, Container } from "@mantine/core";
+import { Image, Center, Container } from "@mantine/core";
 import SearchInput from "@/components/SearchInput/SearchInput.component";
 import Button from "@/components/Button/Button.component";
 
@@ -23,6 +23,13 @@ export default function Home() {
 			</Head>
 			<Container>
 				<Center h={100} mx="auto">
+					<Image
+						maw={240}
+						mx="auto"
+						radius="md"
+						src="./logo.png"
+						alt="Random image"
+					/>
 					<SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 					<Button onClick={handleSearch}>Search</Button>
 				</Center>
