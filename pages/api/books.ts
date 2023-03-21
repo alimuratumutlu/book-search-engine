@@ -1,6 +1,8 @@
 import axios from "axios";
 import type { NextApiRequest, NextApiResponse } from "next";
 
+const NO_IMAGE = "https://via.placeholder.com/140x140";
+
 export interface Book {
 	title: string;
 	author: string;
@@ -19,7 +21,9 @@ export default async function handler(
 	const books: Book[] = response.data.docs.slice(0, 50).map((book: any) => ({
 		title: book.title,
 		author: book.author_name ? book.author_name[0] : "Unknown Author",
-		cover: `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`,
+		cover: book.cover_i
+			? `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
+			: NO_IMAGE,
 		publish_year: book.first_publish_year || "N/A",
 	}));
 	res.status(200).json(books);
