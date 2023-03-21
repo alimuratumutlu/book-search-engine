@@ -1,9 +1,8 @@
 import Head from "next/head";
 import { Group, Image, Center, Container, Loader } from "@mantine/core";
-import SearchInput from "@/components/SearchInput/SearchInput.component";
-import Button from "@/components/Button/Button.component";
-
-import { ArticleCardVertical } from "@/components/Card/Card.component";
+import SearchInput from "@components/SearchInput/SearchInput.component";
+import Button from "@components/Button/Button.component";
+import Card from "@components/Card/Card.component";
 
 import useBookData from "@/hooks/useBookData";
 
@@ -39,7 +38,7 @@ export default function Home() {
 				{books &&
 					books.map((book, index) => {
 						return (
-							<ArticleCardVertical
+							<Card
 								key={index}
 								image={book.cover}
 								title={book.title}

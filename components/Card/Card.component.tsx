@@ -1,4 +1,10 @@
-import { createStyles, Card, Image, Text, Group } from "@mantine/core";
+import {
+	createStyles,
+	Card as MantineCard,
+	Image,
+	Text,
+	Group,
+} from "@mantine/core";
 
 const useStyles = createStyles((theme) => ({
 	card: {
@@ -17,20 +23,16 @@ const useStyles = createStyles((theme) => ({
 	},
 }));
 
-interface ArticleCardVerticalProps {
+interface cardProps {
 	image: string;
 	title: string;
 	author: string;
 }
 
-export function ArticleCardVertical({
-	image,
-	title,
-	author,
-}: ArticleCardVerticalProps) {
+export default function Card({ image, title, author }: cardProps) {
 	const { classes } = useStyles();
 	return (
-		<Card withBorder radius="md" p={0} className={classes.card} mb="md">
+		<MantineCard withBorder radius="md" p={0} className={classes.card} mb="md">
 			<Group noWrap spacing={0}>
 				<Image src={image} height={140} width={140} />
 				<div className={classes.body}>
@@ -47,6 +49,6 @@ export function ArticleCardVertical({
 					</Group>
 				</div>
 			</Group>
-		</Card>
+		</MantineCard>
 	);
 }
