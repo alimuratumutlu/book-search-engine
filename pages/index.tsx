@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Group, Image, Center, Container, Loader } from "@mantine/core";
+import { Group, Image, Center, Container, Loader, Stack } from "@mantine/core";
 import SearchInput from "@components/SearchInput/SearchInput.component";
 import Button from "@components/Button/Button.component";
 import Card from "@components/Card/Card.component";
@@ -34,8 +34,9 @@ export default function Home() {
 						<Button onClick={handleSearch}>Search</Button>
 					</Group>
 				</Center>
-				{isLoading && <Loader />}
-				{books &&
+				<Center>{isLoading && <Loader />}</Center>
+				{!isLoading &&
+					books &&
 					books.map((book, index) => {
 						return (
 							<Card
