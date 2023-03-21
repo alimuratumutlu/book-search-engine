@@ -23,8 +23,6 @@ interface ArticleCardVerticalProps {
 	author: string;
 }
 
-const NO_IMAGE = "https://via.placeholder.com/140x140";
-
 export function ArticleCardVertical({
 	image,
 	title,
@@ -34,7 +32,7 @@ export function ArticleCardVertical({
 	return (
 		<Card withBorder radius="md" p={0} className={classes.card} mb="md">
 			<Group noWrap spacing={0}>
-				<Image src={image ? image : NO_IMAGE} height={140} width={140} />
+				<Image src={image} height={140} width={140} />
 				<div className={classes.body}>
 					<Text className={classes.title} mt="xs" mb="md">
 						{title}
