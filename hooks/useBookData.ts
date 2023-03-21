@@ -9,8 +9,8 @@ interface Book {
 }
 
 const useBookData = () => {
-	const [searchTerm, setSearchTerm] = useState<string>("");
 	const [books, setBooks] = useState<Book[]>([]);
+	const [searchTerm, setSearchTerm] = useState<string>("");
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 
 	const fetchBooks = async (searchTerm: string) => {
@@ -20,7 +20,7 @@ const useBookData = () => {
 				`https://admin.muum.dev/book_search.php?searchTerm=${searchTerm}`
 			);
 			const books = response.data;
-			console.log(books);
+			console.log("books", books);
 			setIsLoading(false);
 			return books;
 		} catch (error) {
@@ -35,10 +35,10 @@ const useBookData = () => {
 	};
 
 	return {
+		books,
 		isLoading,
 		searchTerm,
 		setSearchTerm,
-		books,
 		handleSearch,
 	};
 };

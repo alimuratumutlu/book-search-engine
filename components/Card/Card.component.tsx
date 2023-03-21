@@ -35,18 +35,13 @@ export default function Card({ image, title, author }: cardProps) {
 	return (
 		<MantineCard withBorder radius="md" p={0} className={classes.card} mb="md">
 			<Group noWrap spacing={0}>
-				<Image src={image} height={140} width={140} alt={title} />
+				<Image src={image} height={90} width={82} alt={title} />
 				<div className={classes.body}>
-					<Text className={classes.title} mt="xs" mb="md">
+					<Text className={classes.title} mb="md">
 						{title}
 					</Text>
-					<Group noWrap spacing="xs">
-						<Group spacing="xs" noWrap>
-							<Text size="xs">{author}</Text>
-						</Group>
-						<Text size="xs" color="dimmed">
-							•
-						</Text>
+					<Group spacing="xs" noWrap>
+						<Text size="xs">{author}</Text>
 					</Group>
 				</div>
 			</Group>

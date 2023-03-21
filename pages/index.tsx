@@ -1,5 +1,6 @@
+import React from "react";
 import Head from "next/head";
-import { Group, Image, Center, Container, Loader, Stack } from "@mantine/core";
+import { Group, Image, Center, Container, Loader } from "@mantine/core";
 import SearchInput from "@components/SearchInput/SearchInput.component";
 import Button from "@components/Button/Button.component";
 import Card from "@components/Card/Card.component";
