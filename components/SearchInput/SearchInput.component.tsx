@@ -18,10 +18,12 @@ export default function SearchInput({
 
 	return (
 		<Input
+			width={300}
 			onChange={handleChange}
 			icon={<IconBook />}
 			placeholder="Search for books"
 			value={searchTerm}
+			style={{ width: "auto", minWidth: 400 }}
 		/>
 	);
 }
