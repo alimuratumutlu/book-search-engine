@@ -3,6 +3,26 @@ import { Input } from "@mantine/core";
 
 import { IconBook } from "@tabler/icons-react";
 
-export default function SearchInput() {
-	return <Input icon={<IconBook />} placeholder="Search for books" />;
+interface searchInputProps {
+	searchTerm: string;
+	setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function SearchInput({
+	searchTerm,
+	setSearchTerm,
+}: searchInputProps) {
+	const handleSearch = () => {
+		console.log("Search for books");
+		setSearchTerm(searchTerm);
+	};
+
+	return (
+		<Input
+			icon={<IconBook />}
+			placeholder="Search for books"
+			value={searchTerm}
+			onChange={handleSearch}
+		/>
+	);
 }
