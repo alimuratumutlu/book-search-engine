@@ -1,3 +1,4 @@
+import React from "react";
 import {
 	createStyles,
 	Card as MantineCard,
@@ -34,7 +35,7 @@ export default function Card({ image, title, author }: cardProps) {
 	return (
 		<MantineCard withBorder radius="md" p={0} className={classes.card} mb="md">
 			<Group noWrap spacing={0}>
-				<Image src={image} height={140} width={140} />
+				<Image src={image} height={140} width={140} alt={title} />
 				<div className={classes.body}>
 					<Text className={classes.title} mt="xs" mb="md">
 						{title}

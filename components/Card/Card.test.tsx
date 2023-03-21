@@ -3,10 +3,10 @@ import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Card from "./Card.component";
 
-describe("ArticleCardVertical component", () => {
+describe("Card component", () => {
 	test("renders the card with the provided image, title, and author", () => {
 		const mockProps = {
-			image: "https://example.com/image.jpg",
+			image: "https://via.placeholder.com/150",
 			title: "Test Article Title",
 			author: "John Doe",
 		};
